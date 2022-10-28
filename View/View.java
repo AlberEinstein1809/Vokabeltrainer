@@ -12,6 +12,7 @@ public class View {
 
     private void objekteErstellen() {
         frame = new JFrame();
+        frame.setSize(400, 800);
     }
 
     private static WindowState windowState;
