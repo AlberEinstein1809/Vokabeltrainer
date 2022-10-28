@@ -1,8 +1,6 @@
 package Engine;
 import java.util.ArrayList;
 
-import javax.swing.JFrame;
-
 import Objects.Vokabel;
 import Structures.*;
 import View.View;
@@ -14,5 +12,6 @@ public class Main{
 
     public static void main(String[] args) {
         view = new View();
+        //TODO: thread für die timeslice erstellen
     }
 }
