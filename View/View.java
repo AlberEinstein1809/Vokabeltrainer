@@ -10,6 +10,8 @@ public class View {
     private static JLabel emptyLabel;
     private static WindowState windowState;
     private static Home home;
+    private static VocAbfragen vocAbfragen;
+    private static WindowState windowStateOld;
 
     public View() {
         objekteErstellen();
@@ -20,18 +22,35 @@ public class View {
         frame = new JFrame();
         frame.setSize(400, 800);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
-
-        emptyLabel = new JLabel("hello");
-        emptyLabel.setBounds(200,200,200,200);
-        emptyLabel.setVisible(false);
-        frame.add(emptyLabel);
         
         home = new Home();
+        vocAbfragen = new VocAbfragen();
+
+        emptyLabel = new JLabel("");
+        frame.add(emptyLabel);
+        emptyLabel.setVisible(true);
+
+        frame.setVisible(true);
     }
 
     public static JFrame getFrame() {
         return frame;
+    }
+
+    public void checkWindowState() {
+        if(windowStateOld != windowState) {
+
+            home.isVisible(false);
+            vocAbfragen.isVisible(false);
+
+            switch(windowState) {
+                case HOME: home.isVisible(true);
+                case VOCABFRAGEN: vocAbfragen.isVisible(true);
+                default: break;
+            }
+            windowStateOld = windowState;
+        }
+            
     }
 
     

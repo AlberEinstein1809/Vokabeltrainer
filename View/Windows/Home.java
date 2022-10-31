@@ -5,7 +5,8 @@ import View.View;
 public class Home {
 
     JLabel labelHello;
-
+    
+    //TODO: buttons für die nächsten Windows
 
     public Home() {
         objekteErstellen();
@@ -13,9 +14,11 @@ public class Home {
 
     private void objekteErstellen() {
         labelHello = new JLabel("Wilkommen zurück");
-        labelHello.setBounds(200,200,100,100);
-        labelHello.setVisible(true); //später in main
+        labelHello.setBounds(100,70,200,200);
+        labelHello.setHorizontalAlignment(JLabel.CENTER);
+        labelHello.setVerticalAlignment(JLabel.CENTER);
         View.getFrame().add(labelHello);
+        labelHello.setVisible(true); //später in main
         
     }
 
