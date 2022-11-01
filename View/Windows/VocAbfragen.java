@@ -25,7 +25,7 @@ public class VocAbfragen {
         labelHeader.setHorizontalAlignment(JLabel.CENTER);
         labelHeader.setVerticalAlignment(JLabel.CENTER);
         View.getFrame().add(labelHeader);
-        labelHeader.setVisible(true); //später in main
+        labelHeader.setVisible(false); //später in main
 
         zurueckButton = new JButton("zurück");
         zurueckButton.setBounds(10,10,100,60);
@@ -36,7 +36,7 @@ public class VocAbfragen {
             }
         });
         View.getFrame().add(zurueckButton);
-        zurueckButton.setVisible(true);
+        zurueckButton.setVisible(false);
         
     }
 

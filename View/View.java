@@ -12,6 +12,7 @@ public class View {
     private static Home home;
     private static VocAbfragen vocAbfragen;
     private static int buttonZurueckCounterOld;
+    private static int buttonVocLernenCounterOld;
 
     public View() {
         objekteErstellen();
@@ -38,6 +39,13 @@ public class View {
         boolean switched = false;
         if(VocAbfragen.getButtonZurueckCounter() != buttonZurueckCounterOld) {
             windowState = WindowState.HOME;
+            buttonZurueckCounterOld = VocAbfragen.getButtonZurueckCounter();
+            switched = true;
+        }
+
+        if(Home.getButtonVocLernenCounter() != buttonVocLernenCounterOld) {
+            windowState = WindowState.VOCABFRAGEN;
+            buttonVocLernenCounterOld = Home.getButtonVocLernenCounter();
             switched = true;
         }
 
@@ -46,8 +54,8 @@ public class View {
             vocAbfragen.isVisible(false);
 
             switch(windowState) {
-                case HOME: home.isVisible(true);
-                case VOCABFRAGEN: vocAbfragen.isVisible(true);
+                case HOME: home.isVisible(true); break;
+                case VOCABFRAGEN: vocAbfragen.isVisible(true); break;
                 default: break;
             }
 
