@@ -23,6 +23,6 @@ public class Home {
     }
 
     public void isVisible(boolean isVisible) {
-        //TODO: alle auf parameter setzen
+        labelHello.setVisible(isVisible);
     }
 }

@@ -1,7 +1,7 @@
 package View;
 
 import javax.swing.*;
-
+import Engine.Main;
 import View.Windows.*;
 
 public class View {
@@ -12,10 +12,12 @@ public class View {
     private static Home home;
     private static VocAbfragen vocAbfragen;
     private static WindowState windowStateOld;
+    private static ButtonHandler buttonHandler;
 
     public View() {
         objekteErstellen();
         windowState = WindowState.HOME;
+        buttonHandler = new ButtonHandler();
     }
 
     private void objekteErstellen() {
@@ -33,12 +35,11 @@ public class View {
         frame.setVisible(true);
     }
 
-    public static JFrame getFrame() {
-        return frame;
-    }
-
-    public void checkWindowState() {
+    public static void checkWindowState() {
         if(windowStateOld != windowState) {
+            if(Main.getButtonHandler().getWindowState() != windowState) {
+                windowState = Main.getButtonHandler().getWindowState();
+            }
 
             home.isVisible(false);
             vocAbfragen.isVisible(false);
@@ -51,6 +52,18 @@ public class View {
             windowStateOld = windowState;
         }
             
+    }
+
+    public static JFrame getFrame() {
+        return frame;
+    }
+
+    public static Home getHome() {
+        return home;
+    }
+
+    public static VocAbfragen getVocAbfragen() {
+        return vocAbfragen;
     }
 
     

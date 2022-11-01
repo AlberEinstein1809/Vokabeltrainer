@@ -1,5 +1,7 @@
 package View.Windows;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 import View.View;
 
@@ -7,10 +9,13 @@ public class VocAbfragen {
 
     JLabel labelHeader;
     JButton zurueckButton;
+
+    private int buttonZurueckCounter;
     
     //TODO: buttons für die nächsten Windows
 
     public VocAbfragen() {
+        buttonZurueckCounter = 0;
         objekteErstellen();
     }
 
@@ -24,12 +29,23 @@ public class VocAbfragen {
 
         zurueckButton = new JButton("zurück");
         zurueckButton.setBounds(10,10,100,60);
+        zurueckButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                buttonZurueckCounter++;
+            }
+        });
         View.getFrame().add(zurueckButton);
         zurueckButton.setVisible(true);
         
     }
 
     public void isVisible(boolean isVisible) {
-        //TODO: alle auf parameter setzen
+        labelHeader.setVisible(isVisible);
+        zurueckButton.setVisible(isVisible);
+    }
+
+    public int getButtonZurueckCounter() {
+        return buttonZurueckCounter;
     }
 }

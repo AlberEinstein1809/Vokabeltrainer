@@ -1,5 +1,8 @@
 package Timeslice;
 
+import View.ButtonHandler;
+import View.View;
+
 public class Timeslice extends Thread {
 
     private static int timeslot;
@@ -22,6 +25,8 @@ public class Timeslice extends Thread {
         timeslot++;
         
         if(timeslot % 1 == 0) {
+            View.checkWindowState();
+            ButtonHandler.checkButtons();
             // System.out.println("1");
         }
 
