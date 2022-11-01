@@ -21,7 +21,7 @@ public class VocAbfragen {
 
     private void objekteErstellen() {
         labelHeader = new JLabel("Vokabeln Abfragen");
-        labelHeader.setBounds(100,10,200,50);
+        labelHeader.setBounds(100,14,200,50);
         labelHeader.setHorizontalAlignment(JLabel.CENTER);
         labelHeader.setVerticalAlignment(JLabel.CENTER);
         View.getFrame().add(labelHeader);

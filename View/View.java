@@ -24,6 +24,7 @@ public class View {
         frame = new JFrame();
         frame.setSize(400, 800);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setResizable(false);
         
         home = new Home();
         vocAbfragen = new VocAbfragen();
