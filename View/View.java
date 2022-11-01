@@ -11,13 +11,12 @@ public class View {
     private static WindowState windowState;
     private static Home home;
     private static VocAbfragen vocAbfragen;
-    private static WindowState windowStateOld;
-    private static ButtonHandler buttonHandler;
+    private static int buttonZurueckCounterOld;
 
     public View() {
         objekteErstellen();
+        buttonZurueckCounterOld = 0;
         windowState = WindowState.HOME;
-        buttonHandler = new ButtonHandler();
     }
 
     private void objekteErstellen() {
@@ -36,11 +35,13 @@ public class View {
     }
 
     public static void checkWindowState() {
-        if(windowStateOld != windowState) {
-            if(Main.getButtonHandler().getWindowState() != windowState) {
-                windowState = Main.getButtonHandler().getWindowState();
-            }
+        boolean switched = false;
+        if(VocAbfragen.getButtonZurueckCounter() != buttonZurueckCounterOld) {
+            windowState = WindowState.HOME;
+            switched = true;
+        }
 
+        if(switched) {
             home.isVisible(false);
             vocAbfragen.isVisible(false);
 
@@ -49,8 +50,13 @@ public class View {
                 case VOCABFRAGEN: vocAbfragen.isVisible(true);
                 default: break;
             }
-            windowStateOld = windowState;
+
+            switched = false;
         }
+            
+
+
+        
             
     }
 

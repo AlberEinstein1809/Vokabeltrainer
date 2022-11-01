@@ -10,7 +10,7 @@ public class VocAbfragen {
     JLabel labelHeader;
     JButton zurueckButton;
 
-    private int buttonZurueckCounter;
+    private static int buttonZurueckCounter;
     
     //TODO: buttons für die nächsten Windows
 
@@ -45,7 +45,7 @@ public class VocAbfragen {
         zurueckButton.setVisible(isVisible);
     }
 
-    public int getButtonZurueckCounter() {
+    public static int getButtonZurueckCounter() {
         return buttonZurueckCounter;
     }
 }

@@ -26,7 +26,6 @@ public class Timeslice extends Thread {
         
         if(timeslot % 1 == 0) {
             View.checkWindowState();
-            ButtonHandler.checkButtons();
             // System.out.println("1");
         }
 
