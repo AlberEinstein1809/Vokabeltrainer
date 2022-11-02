@@ -1,6 +1,5 @@
 package Timeslice;
 
-import View.ButtonHandler;
 import View.View;
 
 public class Timeslice extends Thread {
