@@ -14,8 +14,6 @@ public class VocHinzufuegen {
     JButton zurueckButton;
 
     private static int buttonZurueckCounter;
-    
-    //TODO: buttons für die nächsten Windows
 
     public VocHinzufuegen() {
         buttonZurueckCounter = 0;

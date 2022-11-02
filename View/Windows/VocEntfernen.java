@@ -14,8 +14,6 @@ public class VocEntfernen {
     JButton zurueckButton;
 
     private static int buttonZurueckCounter;
-    
-    //TODO: buttons für die nächsten Windows
 
     public VocEntfernen() {
         buttonZurueckCounter = 0;

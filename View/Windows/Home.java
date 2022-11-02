@@ -21,7 +21,6 @@ public class Home {
     private static int buttonVocEntfernenCounter;
 
     private static JList listStapel;
-    //TODO: buttons für die nächsten Windows
 
     public Home() {
         objekteErstellen();

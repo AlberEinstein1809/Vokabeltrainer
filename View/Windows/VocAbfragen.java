@@ -15,8 +15,6 @@ public class VocAbfragen {
     JButton zurueckButton;
 
     private static int buttonZurueckCounter;
-    
-    //TODO: buttons für die nächsten Windows
 
     public VocAbfragen() {
         buttonZurueckCounter = 0;
