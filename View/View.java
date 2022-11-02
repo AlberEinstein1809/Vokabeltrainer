@@ -1,8 +1,9 @@
-package View;
-
+package View.Windows;
 import javax.swing.*;
-import Engine.Main;
-import View.Windows.*;
+import View.View;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 
 public class View {
 

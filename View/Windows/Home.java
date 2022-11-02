@@ -1,4 +1,4 @@
-package View.Windows;
+
 import javax.swing.*;
 import View.View;
 import java.awt.event.ActionEvent;
