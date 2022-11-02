@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 public class Home {
 
     private static JLabel labelHello;
+    private static JLabel labelStapelAuswaehlen;
     private static JButton buttonVocLernen;
     private static int buttonVocLernenCounter;
     private static JButton buttonVocAdden;
@@ -33,11 +34,11 @@ public class Home {
         View.getFrame().add(labelHello);
         labelHello.setVisible(true); //später in main
 
-        labelHello = new JLabel("Stapel auswählen:");
-        labelHello.setBounds(100,70,200,50);
-        labelHello.setHorizontalAlignment(JLabel.CENTER);
-        View.getFrame().add(labelHello);
-        labelHello.setVisible(true); //später in main
+        labelStapelAuswaehlen = new JLabel("Stapel auswählen:");
+        labelStapelAuswaehlen.setBounds(100,70,200,50);
+        labelStapelAuswaehlen.setHorizontalAlignment(JLabel.CENTER);
+        View.getFrame().add(labelStapelAuswaehlen);
+        labelStapelAuswaehlen.setVisible(true); //später in main
 
         buttonVocLernen = new JButton("Lernen");
         buttonVocLernen.setBounds(120, 450, 160, 60);
@@ -95,6 +96,7 @@ public class Home {
         buttonVocEntfernen.setVisible(isVisible);
         buttonVocAdden.setVisible(isVisible);
         listStapel.setVisible(isVisible);
+        labelStapelAuswaehlen.setVisible(isVisible);
     }
 
     public static int getButtonVocLernenCounter() {
