@@ -1,6 +1,6 @@
 
 import javax.swing.*;
-import View.View;
+imporView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
