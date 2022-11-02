@@ -84,6 +84,7 @@ public class Home {
         listStapel.setVisible(true);
         
     }
+    
 
     public void isVisible(boolean isVisible) {
         labelHello.setVisible(isVisible);
