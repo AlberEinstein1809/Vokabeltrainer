@@ -10,11 +10,11 @@ public class Main{
 
     private static ArrayList<List<Vokabel>> box;
     private static View view;
-    private static Thread timesclice;
+    private static Thread timeslice;
 
     public static void main(String[] args) {
         view = new View();
-        timesclice = new Thread(new Timeslice());
-        timesclice.start();
+        timeslice = new Thread(new Timeslice());
+        timeslice.start();
     }
 }
