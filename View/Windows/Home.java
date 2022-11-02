@@ -102,6 +102,7 @@ public class Home {
         return buttonVocAddenCounter;
     }
 
+    
     public static String getIndexStapel() {
         return listStapel.getSelectedValue().toString();
     }
