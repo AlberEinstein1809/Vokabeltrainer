@@ -1,4 +1,4 @@
-
+package View.Windows;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.net.URL;
 import javax.imageio.ImageIO;
 import javax.swing.*;
+
 import View.View;
 
 public class VocAbfragen {
