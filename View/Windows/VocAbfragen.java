@@ -2,6 +2,9 @@ package View.Windows;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.net.URL;
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import View.View;
 
@@ -28,7 +31,8 @@ public class VocAbfragen {
         labelHeader.setVisible(false); //später in main
 
         zurueckButton = new JButton("zurück");
-        zurueckButton.setBounds(10,10,100,60);
+        zurueckButton.setBounds(10,10,100,60); //sieht scheiße aus am besten weg machen
+        zurueckButton.setIcon(new ImageIcon("Objects/back.png")); 
         zurueckButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent arg0) {
