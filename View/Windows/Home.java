@@ -11,16 +11,16 @@ public class Home {
 
     private static JLabel labelHello;
     private static JLabel labelStapelAuswaehlen;
-    private static JButton buttonVocLernen;
-    private static int buttonVocLernenCounter;
-    private static JButton buttonVocAdden;
-    private static int buttonVocAddenCounter;
-    private static JButton buttonVocEntfernen;
-    private static int buttonVocEntfernenCounter;
-    private static JList listStapel;
 
-    
-    
+    private static JButton buttonVocLernen;
+    private static JButton buttonVocAdden;
+    private static JButton buttonVocEntfernen;
+
+    private static int buttonVocLernenCounter;
+    private static int buttonVocAddenCounter;
+    private static int buttonVocEntfernenCounter;
+
+    private static JList listStapel;
     //TODO: buttons für die nächsten Windows
 
     public Home() {
@@ -105,6 +105,10 @@ public class Home {
 
     public static int getButtonVocAddenCounter() {
         return buttonVocAddenCounter;
+    }
+
+    public static int getButtonVocEntfernenCounter() {
+        return buttonVocEntfernenCounter;
     }
 
     

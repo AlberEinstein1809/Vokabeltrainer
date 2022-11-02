@@ -10,15 +10,30 @@ public class View {
 
     private static JFrame frame;
     private static JLabel emptyLabel;
+
     private static WindowState windowState;
+
     private static Home home;
     private static VocAbfragen vocAbfragen;
-    private static int buttonZurueckCounterOld;
+    private static VocHinzufuegen vocHinzufuegen;
+    private static VocEntfernen vocEntfernen;
+
+    private static int buttonZurueckCounterOldHome;
+    private static int buttonZurueckCounterOldVocHinzufuegen;
     private static int buttonVocLernenCounterOld;
+    private static int buttonVocAddenCounterOld;
+    private static int buttonVocEntfernenCounterOld;
+    private static int buttonVocEntfernenZurueckCounterOld;
 
     public View() {
         objekteErstellen();
-        buttonZurueckCounterOld = 0;
+        buttonZurueckCounterOldHome = 0;
+        buttonVocLernenCounterOld = 0;
+        buttonZurueckCounterOldVocHinzufuegen = 0;
+        buttonVocAddenCounterOld = 0;
+        buttonVocEntfernenZurueckCounterOld = 0;
+        buttonVocEntfernenCounterOld = 0;
+        
         windowState = WindowState.HOME;
     }
 
@@ -30,6 +45,8 @@ public class View {
         
         home = new Home();
         vocAbfragen = new VocAbfragen();
+        vocHinzufuegen = new VocHinzufuegen();
+        vocEntfernen = new VocEntfernen();
 
         emptyLabel = new JLabel("");
         frame.add(emptyLabel);
@@ -40,9 +57,15 @@ public class View {
 
     public static void checkWindowState() {
         boolean switched = false;
-        if(VocAbfragen.getButtonZurueckCounter() != buttonZurueckCounterOld) {
+        if(VocAbfragen.getButtonZurueckCounter() != buttonZurueckCounterOldHome) {
             windowState = WindowState.HOME;
-            buttonZurueckCounterOld = VocAbfragen.getButtonZurueckCounter();
+            buttonZurueckCounterOldHome = VocAbfragen.getButtonZurueckCounter();
+            switched = true;
+        }
+
+        if(Home.getButtonVocAddenCounter() != buttonVocAddenCounterOld){
+            windowState = WindowState.HINZUFUEGEN;
+            buttonVocAddenCounterOld = Home.getButtonVocAddenCounter();
             switched = true;
         }
 
@@ -52,13 +75,35 @@ public class View {
             switched = true;
         }
 
+        if(Home.getButtonVocEntfernenCounter() != buttonVocEntfernenCounterOld) {
+            windowState = WindowState.ENTFERNEN;
+            buttonVocEntfernenCounterOld = Home.getButtonVocEntfernenCounter();
+            switched = true;
+        }
+
+        if(VocHinzufuegen.getButtonZurueckCounter() != buttonZurueckCounterOldVocHinzufuegen) {
+            windowState = WindowState.HOME;
+            buttonZurueckCounterOldVocHinzufuegen = VocHinzufuegen.getButtonZurueckCounter();
+            switched = true;
+        }
+
+        if(VocEntfernen.getButtonZurueckCounter() != buttonVocEntfernenZurueckCounterOld) {
+            windowState = windowState.HOME;
+            buttonVocEntfernenZurueckCounterOld = VocEntfernen.getButtonZurueckCounter();
+            switched = true;
+        }
+
         if(switched) {
             home.isVisible(false);
             vocAbfragen.isVisible(false);
-
+            vocHinzufuegen.isVisible(false);
+            vocEntfernen.isVisible(false);
+            
             switch(windowState) {
                 case HOME: home.isVisible(true); break;
                 case VOCABFRAGEN: vocAbfragen.isVisible(true); break;
+                case HINZUFUEGEN: vocHinzufuegen.isVisible(true); break;
+                case ENTFERNEN: vocEntfernen.isVisible(true); break;
                 default: break;
             }
 
