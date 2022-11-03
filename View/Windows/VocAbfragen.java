@@ -12,6 +12,7 @@ import View.View;
 public class VocAbfragen {
 
     JLabel labelHeader;
+    JLabel listeHeader;
     JButton zurueckButton;
 
     private static int buttonZurueckCounter;
@@ -29,6 +30,13 @@ public class VocAbfragen {
         View.getFrame().add(labelHeader);
         labelHeader.setVisible(false); //später in main
 
+        listeHeader = new JLabel("Stapel: xxx");
+        listeHeader.setBounds(100,40,200,50);
+        listeHeader.setHorizontalAlignment(JLabel.CENTER);
+        listeHeader.setVerticalAlignment(JLabel.CENTER);
+        View.getFrame().add(listeHeader);
+        listeHeader.setVisible(false); //später in main
+
         zurueckButton = new JButton("zurück");
         zurueckButton.setBounds(10,10,100,60); //sieht scheiße aus am besten weg machen
         zurueckButton.setIcon(new ImageIcon("Objects/back.png")); 
@@ -45,10 +53,15 @@ public class VocAbfragen {
 
     public void isVisible(boolean isVisible) {
         labelHeader.setVisible(isVisible);
+        listeHeader.setVisible(isVisible);
         zurueckButton.setVisible(isVisible);
     }
 
     public static int getButtonZurueckCounter() {
         return buttonZurueckCounter;
+    }
+
+    public JLabel getListeHeader() {
+        return listeHeader;
     }
 }

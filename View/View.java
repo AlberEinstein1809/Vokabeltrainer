@@ -100,19 +100,27 @@ public class View {
             vocEntfernen.isVisible(false);
             
             switch(windowState) {
-                case HOME: home.isVisible(true); break;
-                case VOCABFRAGEN: vocAbfragen.isVisible(true); break;
-                case HINZUFUEGEN: vocHinzufuegen.isVisible(true); break;
-                case ENTFERNEN: vocEntfernen.isVisible(true); break;
+                case HOME: 
+                    home.isVisible(true); 
+                    break;
+                case VOCABFRAGEN: 
+                    vocAbfragen.isVisible(true); 
+                    vocAbfragen.getListeHeader().setText("Stapel: " + Home.getIndexStapel());
+                    break;
+                case HINZUFUEGEN: 
+                    vocHinzufuegen.isVisible(true); 
+                    vocHinzufuegen.getListeHeader().setText("Stapel: "+ Home.getIndexStapel());
+                    break;
+                case ENTFERNEN: 
+                    vocEntfernen.isVisible(true); 
+                    vocEntfernen.getListeHeader().setText("Stapel: " + Home.getIndexStapel());
+                    break;
                 default: break;
             }
 
             switched = false;
         }
             
-
-
-        
             
     }
 
