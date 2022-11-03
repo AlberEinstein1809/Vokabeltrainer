@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.net.URL;
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import Structures.List;
+import Objects.Vokabel;
 
 import View.View;
 
@@ -13,15 +15,37 @@ public class VocEntfernen {
     JLabel labelHeader;
     JLabel listeHeader;
     JButton zurueckButton;
+    JList listVokabel;
 
     private static int buttonZurueckCounter;
+    private static Vokabel[] vokabeln;
 
     public VocEntfernen() {
         buttonZurueckCounter = 0;
+        vokabeln = new Vokabel[10];
+        for (int i = 0; i < 10; i++) {
+            vokabeln[i] = new Vokabel("Hund", "dog");
+        }
         objekteErstellen();
+
+        
+        
     }
 
     private void objekteErstellen() {
+
+
+        //Stapelliste
+        String[] front = new String[10];
+        for (int i = 0; i < 10; i++) {
+            front[i] = vokabeln[i].getFront();
+        }
+        listVokabel = new JList(front);
+        listVokabel.setSelectedIndex(0);
+        listVokabel.setBounds(120,120,160,100);
+        View.getFrame().add(listVokabel);
+        listVokabel.setVisible(false);
+
         labelHeader = new JLabel("Entfernen");
         labelHeader.setBounds(100,14,200,50);
         labelHeader.setHorizontalAlignment(JLabel.CENTER);
@@ -54,6 +78,7 @@ public class VocEntfernen {
         labelHeader.setVisible(isVisible);
         listeHeader.setVisible(isVisible);
         zurueckButton.setVisible(isVisible);
+        listVokabel.setVisible(isVisible);
     }
 
     public static int getButtonZurueckCounter() {

@@ -111,7 +111,9 @@ public class Home {
     }
 
     
-    public static String getIndexStapel() {
+    public static String getSprache() {
         return listStapel.getSelectedValue().toString();
     }
+
+    
 }

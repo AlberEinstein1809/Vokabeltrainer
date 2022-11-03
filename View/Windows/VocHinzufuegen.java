@@ -2,9 +2,12 @@ package View.Windows;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.io.IOException;
 import java.net.URL;
 import javax.imageio.ImageIO;
+import javax.management.openmbean.KeyAlreadyExistsException;
 import javax.swing.*;
 
 import Objects.Vokabel;
@@ -33,6 +36,7 @@ public class VocHinzufuegen {
     }
 
     private void objekteErstellen() {
+        
         labelHeader = new JLabel("Hinzufügen");
         labelHeader.setBounds(100,14,200,50);
         labelHeader.setHorizontalAlignment(JLabel.CENTER);
@@ -86,11 +90,25 @@ public class VocHinzufuegen {
         hinzufuegenButton = new JButton("Hinzufügen");
         hinzufuegenButton.setBounds(150, 550, 100, 50);
         hinzufuegenButton.setHorizontalAlignment(JLabel.CENTER);
-        zurueckButton.addActionListener(new ActionListener() {
+        hinzufuegenButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent arg0) {
-
+                vokabel = new Vokabel(tfVorderseite.getText(), tfRueckseite.getText());
+                tfVorderseite.setText("Vorne");
+                tfRueckseite.setText("Hinten");
             }
+        });
+        hinzufuegenButton.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+              if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+                    vokabel = new Vokabel(tfVorderseite.getText(), tfRueckseite.getText());
+                    tfVorderseite.setText("Vorne");
+                    tfRueckseite.setText("Hinten");
+                }
+            }
+            public void keyPressed(KeyEvent arg0) {}
+            public void keyReleased(KeyEvent arg0) {}   
         });
         View.getFrame().add(hinzufuegenButton);
         hinzufuegenButton.setVisible(false);
@@ -117,4 +135,7 @@ public class VocHinzufuegen {
         return listeHeader;
     }
 
+    public Vokabel getVokabel() {
+        return vokabel;
+    }
 }
