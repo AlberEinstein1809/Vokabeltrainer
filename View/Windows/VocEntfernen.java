@@ -42,7 +42,7 @@ public class VocEntfernen {
         }
         listVokabel = new JList(front);
         listVokabel.setSelectedIndex(0);
-        listVokabel.setBounds(120,120,160,100);
+        listVokabel.setBounds(120,120,160,250);
         View.getFrame().add(listVokabel);
         listVokabel.setVisible(false);
 
