@@ -9,6 +9,9 @@ import java.net.URL;
 import javax.imageio.ImageIO;
 import javax.management.openmbean.KeyAlreadyExistsException;
 import javax.swing.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.*;
+
 
 import Objects.Vokabel;
 import View.View;
@@ -73,6 +76,12 @@ public class VocHinzufuegen {
         tfVorderseite = new JTextField("Vorne");
         tfVorderseite.setBounds(40, 140, 310, 150);
         tfVorderseite.setHorizontalAlignment(JLabel.CENTER);
+        tfVorderseite.addMouseListener(new MouseAdapter(){
+            @Override
+            public void mouseClicked(MouseEvent e){
+                tfVorderseite.setText("");
+            }
+        });
         View.getFrame().add(tfVorderseite);
         tfVorderseite.setVisible(false);
 
@@ -84,6 +93,12 @@ public class VocHinzufuegen {
         tfRueckseite = new JTextField("Hinten");
         tfRueckseite.setBounds(40, 340, 310, 150);
         tfRueckseite.setHorizontalAlignment(JLabel.CENTER);
+        tfRueckseite.addMouseListener(new MouseAdapter(){
+            @Override
+            public void mouseClicked(MouseEvent e){
+                tfRueckseite.setText("");
+            }
+        });
         View.getFrame().add(tfRueckseite);
         tfRueckseite.setVisible(false);
         
