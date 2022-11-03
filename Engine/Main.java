@@ -1,10 +1,10 @@
 package Engine;
-import java.util.ArrayList;
 
+import java.util.ArrayList;
 import Objects.Vokabel;
 import Structures.*;
-import View.View;
 import Timeslice.Timeslice;
+import View.View;
 
 public class Main{
 

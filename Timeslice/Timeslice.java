@@ -13,7 +13,6 @@ public class Timeslice extends Thread {
             try {
                 sleep(20);
             } catch (InterruptedException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
         }
