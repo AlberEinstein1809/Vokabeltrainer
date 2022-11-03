@@ -11,6 +11,8 @@ import Objects.Vokabel;
 
 import View.View;
 
+//test
+
 public class VocEntfernen {
     JLabel labelHeader;
     JLabel listeHeader;
