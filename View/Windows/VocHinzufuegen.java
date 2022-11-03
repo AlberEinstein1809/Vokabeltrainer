@@ -13,7 +13,16 @@ public class VocHinzufuegen {
     JLabel labelHeader;
     JLabel listeHeader;
     JButton zurueckButton;
+    JLabel labelVorderseite;
+    JLabel labelRueckseite;
+    JTextField tfVorderseite;
+    JTextField tfRueckseite;
 
+    JButton hinzufuegenButton;
+    
+
+    private static int buttonHinzufuegenCounter;
+    private static String[] vokabel;
     private static int buttonZurueckCounter;
 
     public VocHinzufuegen() {
@@ -47,6 +56,45 @@ public class VocHinzufuegen {
         });
         View.getFrame().add(zurueckButton);
         zurueckButton.setVisible(false);
+
+        labelVorderseite = new JLabel("Vorderseite: ");
+        labelVorderseite.setBounds(-20,100,200,50);
+        labelVorderseite.setHorizontalAlignment(JLabel.CENTER);
+        labelVorderseite.setVerticalAlignment(JLabel.CENTER);
+        View.getFrame().add(labelVorderseite);
+        labelVorderseite.setVisible(false); //später in main
+
+        tfVorderseite = new JTextField("Vorne");
+        tfVorderseite.setBounds(40, 140, 310, 150);
+        tfVorderseite.setHorizontalAlignment(JLabel.CENTER);
+        View.getFrame().add(tfVorderseite);
+        tfVorderseite.setVisible(false);
+
+        labelRueckseite = new JLabel("Rückseite: ");
+        labelRueckseite.setBounds(40,300,200,50);
+        View.getFrame().add(labelRueckseite);
+        labelRueckseite.setVisible(false); //später in main
+
+        tfRueckseite = new JTextField("Hinten");
+        tfRueckseite.setBounds(40, 340, 310, 150);
+        tfRueckseite.setHorizontalAlignment(JLabel.CENTER);
+        View.getFrame().add(tfRueckseite);
+        tfRueckseite.setVisible(false);
+        
+        hinzufuegenButton = new JButton("Hinzufügen");
+        hinzufuegenButton.setBounds(150, 550, 100, 50);
+        hinzufuegenButton.setHorizontalAlignment(JLabel.CENTER);
+        zurueckButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                vokabel[0] = tfVorderseite.getText();
+                vokabel[1] = tfRueckseite.getText();
+
+            }
+        });
+        View.getFrame().add(hinzufuegenButton);
+        hinzufuegenButton.setVisible(false);
+
         
     }
 
@@ -54,6 +102,11 @@ public class VocHinzufuegen {
         labelHeader.setVisible(isVisible);
         listeHeader.setVisible(isVisible);
         zurueckButton.setVisible(isVisible);
+        labelVorderseite.setVisible(isVisible);
+        labelRueckseite.setVisible(isVisible);
+        tfVorderseite.setVisible(isVisible);
+        tfRueckseite.setVisible(isVisible);
+        hinzufuegenButton.setVisible(isVisible);
     }
 
     public static int getButtonZurueckCounter() {
@@ -63,4 +116,9 @@ public class VocHinzufuegen {
     public JLabel getListeHeader() {
         return listeHeader;
     }
+
+    public String[] getVokabel() {
+        return vokabel;
+    }
+
 }
