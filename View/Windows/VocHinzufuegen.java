@@ -7,6 +7,7 @@ import java.net.URL;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
+import Objects.Vokabel;
 import View.View;
 
 public class VocHinzufuegen {
@@ -22,11 +23,12 @@ public class VocHinzufuegen {
     
 
     private static int buttonHinzufuegenCounter;
-    private static String[] vokabel;
+    private static Vokabel vokabel;
     private static int buttonZurueckCounter;
 
     public VocHinzufuegen() {
         buttonZurueckCounter = 0;
+        buttonHinzufuegenCounter = 0;
         objekteErstellen();
     }
 
@@ -87,8 +89,6 @@ public class VocHinzufuegen {
         zurueckButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent arg0) {
-                vokabel[0] = tfVorderseite.getText();
-                vokabel[1] = tfRueckseite.getText();
 
             }
         });
@@ -115,10 +115,6 @@ public class VocHinzufuegen {
 
     public JLabel getListeHeader() {
         return listeHeader;
-    }
-
-    public String[] getVokabel() {
-        return vokabel;
     }
 
 }
