@@ -96,24 +96,12 @@ public class VocHinzufuegen {
                 vokabel = new Vokabel(tfVorderseite.getText(), tfRueckseite.getText());
                 tfVorderseite.setText("Vorne");
                 tfRueckseite.setText("Hinten");
+                System.out.println("test");
             }
         });
-        hinzufuegenButton.addKeyListener(new KeyListener() {
-            @Override
-            public void keyTyped(KeyEvent e) {
-              if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-                    vokabel = new Vokabel(tfVorderseite.getText(), tfRueckseite.getText());
-                    tfVorderseite.setText("Vorne");
-                    tfRueckseite.setText("Hinten");
-                }
-            }
-            public void keyPressed(KeyEvent arg0) {}
-            public void keyReleased(KeyEvent arg0) {}   
-        });
+        
         View.getFrame().add(hinzufuegenButton);
         hinzufuegenButton.setVisible(false);
-
-        
     }
 
     public void isVisible(boolean isVisible) {
